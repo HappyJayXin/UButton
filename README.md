@@ -3,6 +3,7 @@
 Simple Button.
 
 ## Demo
+[U-Button](https://happyjayxin.github.io/UButton/)
 
 ## Install
 NPM

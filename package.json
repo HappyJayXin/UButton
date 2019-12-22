@@ -1,10 +1,14 @@
 {
-  "name": "U-Button",
+  "name": "@happyjayxin/ubutton",
   "version": "0.1.0",
+  "description": "My Simple Button.",
   "private": true,
+  "main": "dist/u-button.common.js",
+  "jsdelivr": "dist/u-button.umd.min.js",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name u-button ./src/components/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },

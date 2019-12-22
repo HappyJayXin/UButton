@@ -1,34 +1,43 @@
 # U-Button
 
-## Project setup
+Simple Button.
+
+## Demo
+
+## Install
+NPM
 ```
-npm install
+npm install @happyjayxin/ubutton
+```
+CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.1.0/dist/u-button.umd.min.js"></script>
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+
+## Usage
+```javascript
+// main.js or index.js
+ 
+import Vue from 'vue';
+import UButton from 'ubutton';
+ 
+Vue.use(UButton);
+ 
+new Vue({
+  ...
+});
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Attributes
+Props
 
-### Run your tests
-```
-npm run test
-```
+屬性|說明|類型|預設
+---|---|---|---
+disabled|禁用按鈕|Boolean|false
 
-### Lints and fixes files
-```
-npm run lint
-```
+Event
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+名稱|說明|回傳
+---|---|---
+click|點擊事件|

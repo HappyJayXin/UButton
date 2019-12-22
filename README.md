@@ -12,22 +12,43 @@ npm install @happyjayxin/ubutton
 ```
 CDN
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.1.0/dist/u-button.umd.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.2.0/dist/u-button.css">
+<script src="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton"></script>
 ```
 
 
 ## Usage
-```javascript
-// main.js or index.js
- 
+
+Import Global
+
+```javascript 
 import Vue from 'vue';
-import UButton from 'ubutton';
- 
+import UButton from "@happyjayxin/ubutton";
+import "@happyjayxin/ubutton/dist/u-button.css";
 Vue.use(UButton);
- 
-new Vue({
-  ...
-});
+```
+
+Import in page
+
+```javascript
+<script type="text/ecmascript-6">
+  import { UButton } from "@happyjayxin/ubutton";
+  import "@happyjayxin/ubutton/dist/u-button.css";
+
+  export default {
+    components: { UButton }
+  };
+</script>
+```
+
+## Use
+
+```html
+<template>
+  <div id="app">
+    <u-button @click="sayHello">Hello u-button</u-button>
+  </div>
+</template>
 ```
 
 ## Attributes

@@ -1,6 +1,6 @@
 {
   "name": "@happyjayxin/ubutton",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "My simple Button.",
   "private": false,
   "main": "dist/u-button.common.js",
@@ -71,5 +71,14 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
   }
 }

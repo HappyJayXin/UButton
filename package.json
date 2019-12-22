@@ -4,6 +4,19 @@
   "description": "My Simple Button.",
   "private": true,
   "main": "dist/u-button.common.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HappyJayXin/UButton.git"
+  },
+  "keywords": [
+    "button"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*"
+  ],
+  "homepage": "https://github.com/HappyJayXin/UButton",
   "jsdelivr": "dist/u-button.umd.min.js",
   "license": "MIT",
   "scripts": {

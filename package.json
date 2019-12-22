@@ -2,7 +2,7 @@
   "name": "@happyjayxin/ubutton",
   "version": "0.1.0",
   "description": "My Simple Button.",
-  "private": true,
+  "private": false,
   "main": "dist/u-button.common.js",
   "repository": {
     "type": "git",

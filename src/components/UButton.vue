@@ -1,5 +1,10 @@
 <template>
-  <button @click="handleTap" :class="classObject" class="u-button">
+  <button
+    @click="handleTap"
+    :disabled="disabled"
+    :class="classObject"
+    class="u-button"
+  >
     <slot></slot>
   </button>
 </template>
@@ -15,10 +20,9 @@ export default {
   },
   computed: {
     classObject() {
-      const btnDisabled = this.disabled ? "cursor-not-allowed" : "";
-      const btnOpacity = this.disabled ? "opacity-25" : "";
-      const classNamee = `${btnDisabled} ${btnOpacity}`;
-      return classNamee;
+      const btnDisabled = this.disabled ? "disabled" : "";
+      const className = `${btnDisabled}`;
+      return className;
     }
   },
   methods: {
@@ -29,7 +33,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .u-button {
   background: #fff;
   color: #000;
@@ -39,12 +43,19 @@ export default {
   border-radius: 0.2rem;
   cursor: pointer;
   transition: background 0.1s, color 0.1s;
-}
-.u-button:hover {
-  color: #fff;
-  background: #000;
-}
-.u-button:focus {
-  outline: none;
+
+  &:hover {
+    color: #fff;
+    background: #000;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
 }
 </style>

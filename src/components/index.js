@@ -1,7 +1,8 @@
 import UButton from "@/components/UButton";
 
 const Plugin = {
-  install(Vue) {
+  install(Vue, options = {}) {
+    UButton.props.theme.default = options.theme;
     Vue.component("u-button", UButton);
   }
 };

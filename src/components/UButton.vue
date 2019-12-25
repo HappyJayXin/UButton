@@ -2,6 +2,7 @@
   <button
     @click="handleTap"
     :disabled="disabled"
+    :style="{ '--theme': theme }"
     :class="classObject"
     class="u-button"
   >
@@ -13,6 +14,10 @@
 export default {
   name: "UButton",
   props: {
+    theme: {
+      type: String,
+      default: "#000"
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -34,19 +39,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$theme: var(--theme);
+
 .u-button {
   background: #fff;
-  color: #000;
+  color: $theme;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid #000;
+  border: 1px solid $theme;
   border-radius: 0.2rem;
   cursor: pointer;
   transition: background 0.1s, color 0.1s;
 
   &:hover {
     color: #fff;
-    background: #000;
+    background: $theme;
   }
 
   &:focus {
@@ -55,7 +62,7 @@ export default {
 
   &.disabled {
     cursor: not-allowed;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 }
 </style>

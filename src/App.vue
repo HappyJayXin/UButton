@@ -6,11 +6,8 @@
 </template>
 
 <script>
-import UButton from "@/components/UButton";
-
 export default {
   name: "app",
-  components: { UButton },
   methods: {
     sayHello() {
       alert("Hello");

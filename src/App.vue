@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <u-button @click="sayHello">Hello</u-button>
+    <u-button @click="sayHello" theme="#000">Hello</u-button>
     <u-button @click="sayHello" disabled>Hello</u-button>
   </div>
 </template>

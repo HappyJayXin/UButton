@@ -21,11 +21,17 @@ CDN
 
 Import Global
 
-```javascript 
+```js 
 import Vue from 'vue';
 import UButton from "@happyjayxin/ubutton";
 import "@happyjayxin/ubutton/dist/u-button.css";
 Vue.use(UButton);
+```
+```js
+// Or you can set default global options.
+Vue.use(UButton, {
+  theme: '#f00' // Button theme
+});
 ```
 
 Import in page
@@ -67,6 +73,7 @@ Props
 屬性|說明|類型|預設
 ---|---|---|---
 disabled|禁用按鈕|Boolean|false
+theme|按鈕主題色|String|#000
 
 Event
 

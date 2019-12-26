@@ -88,3 +88,8 @@ Event
 名稱|說明|回傳
 ---|---|---
 click|點擊事件|-
+
+## License
+
+This software is licensed under the [MIT](https://github.com/HappyJayXin/UButton/blob/master/LICENSE).
+

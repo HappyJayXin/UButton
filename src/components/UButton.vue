@@ -1,5 +1,16 @@
 <template>
+  <a
+    v-if="href"
+    :href="href"
+    :disabled="disabled"
+    :style="{ '--theme': theme }"
+    :target="target"
+    class="u-button"
+  >
+    <slot></slot>
+  </a>
   <button
+    v-else
     @click="handleTap"
     :disabled="disabled"
     :style="{ '--theme': theme }"
@@ -16,11 +27,25 @@ export default {
   props: {
     theme: {
       type: String,
-      default: "#000"
+      default: "#000",
+      required: false
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
+      required: false
+    },
+    href: {
+      type: [Object, String],
+      default: "",
+      required: false
+    },
+    target: {
+      type: String,
+      default: "_self",
+      validator(value) {
+        return ["_blank", "_self", "_parent", "_top"].indexOf(value) !== -1;
+      }
     }
   },
   computed: {
@@ -49,6 +74,7 @@ $theme: var(--theme);
   border: 1px solid $theme;
   border-radius: 0.2rem;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.1s, color 0.1s;
 
   &:hover {

@@ -3,32 +3,38 @@
     v-if="href"
     @click="handleTap"
     :href="href"
-    :style="{ '--theme': theme }"
+    :style="{ '--theme': getTheme }"
     :target="target"
     :class="classObject"
     class="u-button"
   >
+    <loading v-if="loading"></loading>
     <slot></slot>
   </a>
   <button
     v-else
     @click="handleTap"
     :disabled="disabled"
-    :style="{ '--theme': theme }"
+    :style="{ '--theme': getTheme }"
     :class="classObject"
     class="u-button"
   >
+    <loading v-if="loading"></loading>
     <slot></slot>
   </button>
 </template>
 
 <script>
+import hexToRgb from "@/helpers/hexToRgb";
+import Loading from "@/components/Loading";
+
 export default {
   name: "UButton",
+  components: { Loading },
   props: {
     theme: {
       type: String,
-      default: "#000"
+      default: "#000000"
     },
     disabled: {
       type: Boolean,
@@ -47,15 +53,31 @@ export default {
     outline: {
       type: Boolean,
       default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classObject() {
-      const btnDisabled = this.disabled ? "disabled" : "";
+      const btnDisabled = this.disabled ? "disabled opacity" : "";
       const btnOutline = this.outline ? "outline" : "";
+      const btnLoading = this.loading ? "opacity disabled" : "";
 
-      const className = `${btnDisabled} ${btnOutline}`;
+      const className = `${btnDisabled} ${btnOutline} ${btnLoading}`;
       return className;
+    },
+    getTheme() {
+      return hexToRgb(this.theme);
+    }
+  },
+  watch: {
+    loading: {
+      handler(val) {
+        if (this.loading) this.outline = !val;
+      },
+      immediate: true
     }
   },
   methods: {
@@ -88,19 +110,14 @@ button {
 
 .u-button {
   color: #fff;
-  background: $theme;
+  background: rgba($theme, 1);
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid $theme;
+  border: 1px solid rgba($theme, 1);
   border-radius: 0.2rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.1s, color 0.1s;
-
-  &:hover {
-    background: #fff;
-    color: $theme;
-  }
+  transition: background 0.2s, color 0.2s;
 
   &:focus {
     outline: none;
@@ -109,15 +126,18 @@ button {
   &.disabled {
     pointer-events: none;
     cursor: not-allowed;
-    opacity: 0.5;
+  }
+
+  &.opacity {
+    opacity: 0.3;
   }
 
   &.outline {
     background: transparent;
-    color: $theme;
+    color: rgba($theme, 1);
     &:hover {
-      color: #fff;
-      background: $theme;
+      color: #ffffff;
+      background: rgba($theme, 1);
     }
   }
 }

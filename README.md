@@ -12,7 +12,7 @@ npm install @happyjayxin/ubutton
 ```
 CDN
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.2.3/dist/u-button.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.2.4/dist/u-button.css">
 <script src="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton"></script>
 ```
 
@@ -78,9 +78,10 @@ Props
 屬性|說明|類型|預設
 ---|---|---|---
 disabled|禁用按鈕|Boolean|false
-theme|按鈕主題色|String|#000
+theme|客製按鈕主題色|String|#000
 href|跳頁選項|String|-
 target|打開連結方式，和 HTML a 標籤的 target 相同|String|_self
+loading|按鈕進入載入中狀態|Boolean|false
 
 Event
 

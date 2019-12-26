@@ -1,6 +1,6 @@
 {
   "name": "@happyjayxin/ubutton",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "My simple Button.",
   "private": false,
   "main": "dist/u-button.common.js",

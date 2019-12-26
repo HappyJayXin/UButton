@@ -22,7 +22,7 @@
       </section>
       <section class="app__section">
         <h4>Click Event</h4>
-        <u-button @click="sayHello" theme="#000">Hello</u-button>
+        <u-button @click="sayHello" theme="#000000">Hello</u-button>
       </section>
       <section class="app__section">
         <h4>Disabled</h4>
@@ -39,8 +39,23 @@
         <u-button outline>GitHub</u-button>
       </section>
       <section class="app__section">
-        <h4>Theme</h4>
-        <u-button theme="#3867d6">GitHub</u-button>
+        <h4>Loading</h4>
+        <u-button :loading="isloading" @click="loadHandle" outline>
+          <template v-if="isloading">Loading...</template>
+          <template v-else>Click Me</template>
+        </u-button>
+      </section>
+      <section class="app__section">
+        <h4>Theme - orange</h4>
+        <u-button theme="#e58e26">GitHub</u-button>
+      </section>
+      <section class="app__section">
+        <h4>Theme - blue</h4>
+        <u-button theme="#0c2461">GitHub</u-button>
+      </section>
+      <section class="app__section">
+        <h4>Theme - green</h4>
+        <u-button theme="#079992">GitHub</u-button>
       </section>
     </main>
   </div>
@@ -49,9 +64,16 @@
 <script>
 export default {
   name: "app",
+  data: () => ({
+    isloading: false
+  }),
   methods: {
     sayHello() {
       alert("Hello");
+    },
+    loadHandle() {
+      this.isloading = true;
+      setTimeout(() => (this.isloading = false), 2000);
     }
   }
 };

@@ -36,7 +36,7 @@ Vue.use(UButton, {
 
 Import in page
 
-```javascript
+```html
 <script type="text/ecmascript-6">
   import { UButton } from "@happyjayxin/ubutton";
   import "@happyjayxin/ubutton/dist/u-button.css";
@@ -74,9 +74,11 @@ Props
 ---|---|---|---
 disabled|禁用按鈕|Boolean|false
 theme|按鈕主題色|String|#000
+href|跳頁選項|String|-
+target|打開連結方式，和 HTML a 標籤的 target 相同|String|_self
 
 Event
 
 名稱|說明|回傳
 ---|---|---
-click|點擊事件|
+click|點擊事件|-

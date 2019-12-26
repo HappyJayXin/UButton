@@ -1,10 +1,11 @@
 <template>
   <a
     v-if="href"
+    @click="handleTap"
     :href="href"
-    :disabled="disabled"
     :style="{ '--theme': theme }"
     :target="target"
+    :class="classObject"
     class="u-button"
   >
     <slot></slot>
@@ -27,18 +28,14 @@ export default {
   props: {
     theme: {
       type: String,
-      default: "#000",
-      required: false
+      default: "#000"
     },
     disabled: {
       type: Boolean,
-      default: false,
-      required: false
+      default: false
     },
     href: {
-      type: [Object, String],
-      default: "",
-      required: false
+      type: String
     },
     target: {
       type: String,
@@ -87,6 +84,7 @@ $theme: var(--theme);
   }
 
   &.disabled {
+    pointer-events: none;
     cursor: not-allowed;
     opacity: 0.5;
   }

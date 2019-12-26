@@ -27,6 +27,12 @@
         <h4>Disabled</h4>
         <u-button @click="sayHello" disabled>Hello</u-button>
       </section>
+      <section class="app__section">
+        <h4>Link</h4>
+        <u-button href="https://github.com/HappyJayXin/UButton" target="_blank"
+          >GitHub</u-button
+        >
+      </section>
     </main>
   </div>
 </template>

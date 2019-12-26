@@ -18,15 +18,15 @@
     <main class="app--wrap">
       <section class="app__section">
         <h4>Default</h4>
-        <u-button>Hello</u-button>
+        <u-button>Default</u-button>
       </section>
       <section class="app__section">
         <h4>Click Event</h4>
-        <u-button @click="sayHello" theme="#000000">Hello</u-button>
+        <u-button @click="sayHello" theme="#000000">Say Hello</u-button>
       </section>
       <section class="app__section">
         <h4>Disabled</h4>
-        <u-button @click="sayHello" disabled>Hello</u-button>
+        <u-button @click="sayHello" disabled>Disabled</u-button>
       </section>
       <section class="app__section">
         <h4>Link</h4>
@@ -36,7 +36,7 @@
       </section>
       <section class="app__section">
         <h4>Outline</h4>
-        <u-button outline>GitHub</u-button>
+        <u-button outline>Outline</u-button>
       </section>
       <section class="app__section">
         <h4>Loading</h4>
@@ -47,15 +47,15 @@
       </section>
       <section class="app__section">
         <h4>Theme - orange</h4>
-        <u-button theme="#e58e26">GitHub</u-button>
+        <u-button theme="#e58e26">#e58e26</u-button>
       </section>
       <section class="app__section">
         <h4>Theme - blue</h4>
-        <u-button theme="#0c2461">GitHub</u-button>
+        <u-button theme="#0c2461">#0c2461</u-button>
       </section>
       <section class="app__section">
         <h4>Theme - green</h4>
-        <u-button theme="#079992">GitHub</u-button>
+        <u-button theme="#079992">#079992</u-button>
       </section>
     </main>
   </div>
@@ -80,9 +80,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import "./assets/css/normalize.css";
 
 .app {
+  font-family: "Montserrat", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;

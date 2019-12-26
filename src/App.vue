@@ -8,6 +8,7 @@
           >GitHub</u-button
         >
         <u-button
+          outline
           href="https://www.npmjs.com/package/@happyjayxin/ubutton"
           target="_blank"
           >NPM</u-button
@@ -32,6 +33,14 @@
         <u-button href="https://github.com/HappyJayXin/UButton" target="_blank"
           >GitHub</u-button
         >
+      </section>
+      <section class="app__section">
+        <h4>Outline</h4>
+        <u-button outline>GitHub</u-button>
+      </section>
+      <section class="app__section">
+        <h4>Theme</h4>
+        <u-button theme="#3867d6">GitHub</u-button>
       </section>
     </main>
   </div>

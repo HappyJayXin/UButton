@@ -43,17 +43,24 @@ export default {
       validator(value) {
         return ["_blank", "_self", "_parent", "_top"].indexOf(value) !== -1;
       }
+    },
+    outline: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classObject() {
       const btnDisabled = this.disabled ? "disabled" : "";
-      const className = `${btnDisabled}`;
+      const btnOutline = this.outline ? "outline" : "";
+
+      const className = `${btnDisabled} ${btnOutline}`;
       return className;
     }
   },
   methods: {
     handleTap(evt) {
+      if (this.disabled) return false;
       this.$emit("click", evt);
     }
   }
@@ -63,9 +70,25 @@ export default {
 <style scoped lang="scss">
 $theme: var(--theme);
 
+// Reset button
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
 .u-button {
-  background: #fff;
-  color: $theme;
+  color: #fff;
+  background: $theme;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border: 1px solid $theme;
@@ -75,8 +98,8 @@ $theme: var(--theme);
   transition: background 0.1s, color 0.1s;
 
   &:hover {
-    color: #fff;
-    background: $theme;
+    background: #fff;
+    color: $theme;
   }
 
   &:focus {
@@ -87,6 +110,15 @@ $theme: var(--theme);
     pointer-events: none;
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.outline {
+    background: transparent;
+    color: $theme;
+    &:hover {
+      color: #fff;
+      background: $theme;
+    }
   }
 }
 </style>

@@ -3,8 +3,8 @@
 Vue button with simple style.
 
 ## Demo
-
 [U-Button](https://happyjayxin.github.io/UButton/)
+![U-Butto](https://raw.githubusercontent.com/HappyJayXin/UButton/master/src/assets/image/20191227.PNG)
 
 ## Install
 

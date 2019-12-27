@@ -130,4 +130,21 @@ export default {
     height: 110px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .app {
+    &--wrap {
+      width: 95%;
+    }
+  }
+}
+@media screen and (max-width: 470px) {
+  .app {
+    padding: 8rem 0 4rem;
+    overflow-y: scroll;
+    &__section {
+      width: 50%;
+    }
+  }
+}
 </style>

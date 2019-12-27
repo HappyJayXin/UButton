@@ -20,7 +20,7 @@ CDN
 <link
   rel="stylesheet"
   type="text/css"
-  href="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.2.4/dist/u-button.css"
+  href="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton@0.3.0/dist/u-button.css"
 />
 <script src="https://cdn.jsdelivr.net/npm/@happyjayxin/ubutton"></script>
 ```

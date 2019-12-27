@@ -37,7 +37,8 @@ Vue.use(UButton);
 ```js
 // You can set default global options.
 Vue.use(UButton, {
-  theme: '#f00' // Button theme
+  theme: '#f00', // Button theme
+  outline: true
 });
 ```
 

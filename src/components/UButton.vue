@@ -121,6 +121,10 @@ button {
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 
+  &:hover {
+    background: rgba($theme, 0.8);
+  }
+
   &:focus {
     outline: none;
   }

@@ -110,6 +110,7 @@ Props
 | target   | 打開連結方式，和 HTML a 標籤的 target 相同。 | String  | \_self |
 | loading  | 按鈕進入載入中狀態。                         | Boolean | false  |
 | round    | 按鈕邊框圓角，可選值為 `0`、`1`、`2`、`3`。  | String  | '0'    |
+| outline  | 改變按鈕樣式為外框按鈕                       | Boolean | false  |
 
 Event
 

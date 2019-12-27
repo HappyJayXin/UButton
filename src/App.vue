@@ -51,7 +51,7 @@
       </section>
       <section class="app__section">
         <h4>Theme - blue</h4>
-        <u-button theme="#0c2461">#0c2461</u-button>
+        <u-button theme="#0c2461" outline>#0c2461</u-button>
       </section>
       <section class="app__section">
         <h4>Theme - green</h4>

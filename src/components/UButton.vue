@@ -29,7 +29,7 @@ import hexToRgb from "@/helpers/hexToRgb";
 import Loading from "@/components/Loading";
 
 export default {
-  name: "UButton",
+  name: "u-button",
   components: { Loading },
   props: {
     theme: {
@@ -49,8 +49,8 @@ export default {
     target: {
       type: String,
       default: "_self",
-      validator(value) {
-        return ["_blank", "_self", "_parent", "_top"].indexOf(value) !== -1;
+      validator: target => {
+        return ["_blank", "_self", "_parent", "_top"].indexOf(target) !== -1;
       }
     },
     outline: {
@@ -60,6 +60,13 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    round: {
+      type: String,
+      default: "0",
+      validator: value => {
+        return ["0", "1", "2", "3"].indexOf(value) !== -1;
+      }
     }
   },
   computed: {
@@ -67,8 +74,9 @@ export default {
       const btnDisabled = this.disabled ? "disabled opacity" : "";
       const btnOutline = this.outline ? "outline" : "";
       const btnLoading = this.loading ? "opacity disabled" : "";
+      const btnRound = this.round ? `round${this.round}` : "";
 
-      const className = `${btnDisabled} ${btnOutline} ${btnLoading}`;
+      const className = `${btnDisabled} ${btnOutline} ${btnLoading} ${btnRound}`;
       return className;
     },
     getTheme() {
@@ -117,7 +125,6 @@ button {
   font-weight: 500;
   padding: 0.5rem 1rem;
   border: 1px solid rgba($theme, 1);
-  border-radius: 0.2rem;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
@@ -133,6 +140,18 @@ button {
 
   &.opacity {
     opacity: 0.3;
+  }
+
+  &.round1 {
+    border-radius: 0.2rem;
+  }
+
+  &.round2 {
+    border-radius: 0.6rem;
+  }
+
+  &.round3 {
+    border-radius: 1.5rem;
   }
 
   &.outline {

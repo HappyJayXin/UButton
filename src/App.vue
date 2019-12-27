@@ -57,6 +57,18 @@
         <h4>Theme - green</h4>
         <u-button theme="#079992">#079992</u-button>
       </section>
+      <section class="app__section">
+        <h4>round 1</h4>
+        <u-button round="1">round 1</u-button>
+      </section>
+      <section class="app__section">
+        <h4>round 2</h4>
+        <u-button round="2">round 2</u-button>
+      </section>
+      <section class="app__section">
+        <h4>round 3</h4>
+        <u-button round="3">round 3</u-button>
+      </section>
     </main>
   </div>
 </template>

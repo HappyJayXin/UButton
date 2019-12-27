@@ -1,20 +1,18 @@
-<template>
-  <span id="u-loading" :style="{ '--color': getColor }"></span>
-</template>
-
 <script>
 export default {
   name: "loading",
+  functional: true,
   props: {
     outline: {
       type: Boolean,
       default: false
     }
   },
-  computed: {
-    getColor() {
-      return this.outline ? "#000000" : "#ffffff";
-    }
+  render: function(h, { props }) {
+    return h("span", {
+      attrs: { id: "u-loading" },
+      style: { "--color": props.outline ? "#000000" : "#ffffff" }
+    });
   }
 };
 </script>

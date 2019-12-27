@@ -22,7 +22,7 @@
       </section>
       <section class="app__section">
         <h4>Click Event</h4>
-        <u-button @click="sayHello" theme="#000000">Say Hello</u-button>
+        <u-button @click="sayHello" theme="#000">Say Hello</u-button>
       </section>
       <section class="app__section">
         <h4>Disabled</h4>

@@ -1,6 +1,6 @@
 # U-Button
 
-Simple Button.
+Vue button with simple style.
 
 ## Demo
 
@@ -74,6 +74,7 @@ Or import UButton as a local component
   };
 </script>
 ```
+
 [See more Example Code](https://github.com/HappyJayXin/UButton/blob/master/src/App.vue)
 
 ## Using with Nuxt
@@ -99,13 +100,13 @@ export default {
 
 Props
 
-| 屬性     | 說明                                       | 類型    | 預設   |
-| -------- | ------------------------------------------ | ------- | ------ |
-| disabled | 禁用按鈕                                   | Boolean | false  |
-| theme    | 客製按鈕主題色                             | String  | #000   |
-| href     | 跳頁選項                                   | String  | -      |
-| target   | 打開連結方式，和 HTML a 標籤的 target 相同 | String  | \_self |
-| loading  | 按鈕進入載入中狀態                         | Boolean | false  |
+| 屬性     | 說明                                         | 類型    | 預設   |
+| -------- | -------------------------------------------- | ------- | ------ |
+| disabled | 禁用按鈕。                                   | Boolean | false  |
+| theme    | 客製按鈕主題色，參數必須為 Hex 十六進位。    | String  | #000   |
+| href     | 跳頁選項。                                   | String  | -      |
+| target   | 打開連結方式，和 HTML a 標籤的 target 相同。 | String  | \_self |
+| loading  | 按鈕進入載入中狀態。                         | Boolean | false  |
 
 Event
 

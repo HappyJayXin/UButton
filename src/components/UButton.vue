@@ -34,7 +34,10 @@ export default {
   props: {
     theme: {
       type: String,
-      default: "#000000"
+      default: "#000000",
+      validator: hex => {
+        return /^#([0-9a-f]{3}){1,2}$/i.test(hex);
+      }
     },
     disabled: {
       type: Boolean,

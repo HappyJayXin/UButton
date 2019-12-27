@@ -8,7 +8,7 @@
     :class="classObject"
     class="u-button"
   >
-    <loading v-if="loading"></loading>
+    <loading v-if="loading" :outline="outline"></loading>
     <slot></slot>
   </a>
   <button
@@ -19,7 +19,7 @@
     :class="classObject"
     class="u-button"
   >
-    <loading v-if="loading"></loading>
+    <loading v-if="loading" :outline="outline"></loading>
     <slot></slot>
   </button>
 </template>
@@ -81,14 +81,6 @@ export default {
     },
     getTheme() {
       return hexToRgb(this.theme);
-    }
-  },
-  watch: {
-    loading: {
-      handler(val) {
-        if (this.loading) this.outline = !val;
-      },
-      immediate: true
     }
   },
   methods: {

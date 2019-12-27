@@ -1,15 +1,26 @@
 <template>
-  <span id="u-loading"></span>
+  <span id="u-loading" :style="{ '--color': getColor }"></span>
 </template>
 
 <script>
 export default {
-  name: "loading"
+  name: "loading",
+  props: {
+    outline: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    getColor() {
+      return this.outline ? "#000000" : "#ffffff";
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
-$color: #ffffff;
+$color: var(--color);
 $border: 2px;
 $size: 12px;
 
